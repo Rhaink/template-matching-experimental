@@ -1,0 +1,108 @@
+# Template Matching Experimental - Git Ignore File
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_orig
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large datasets (should be downloaded separately)
+data/large_datasets/
+data/COVID-19_Radiography_Dataset/
+data/coordenadas/
+
+# Generated visualizations (too large for Git)
+visualizations/all_159_images/
+visualizations/landmark_predictions/*.png
+visualizations/lung_contours/*.png
+!visualizations/landmark_predictions/README.md
+!visualizations/lung_contours/README.md
+
+# Model checkpoints and large results
+models/*.pkl
+results/*.pkl
+!models/README.md
+!results/README.md
+
+# Keep sample visualizations and baseline data
+!visualizations/performance_summary.png
+!data/results_coordenadas_prueba_1.pkl
+
+# Development and testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentation builds
+docs/_build/
+docs/auto_examples/
+
+# Performance profiling
+*.prof
+*.pstats
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Package distribution
+*.tar.gz
+*.whl

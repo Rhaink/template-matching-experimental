@@ -1,0 +1,55 @@
+# Core dependencies for Matching Experimental Platform
+# These versions are tested and validated for reproducible results
+
+# Scientific computing and arrays
+numpy>=1.21.0,<2.0.0
+scipy>=1.7.0,<2.0.0
+scikit-learn>=1.0.0,<2.0.0
+
+# Image processing
+opencv-python>=4.5.0,<5.0.0
+Pillow>=8.0.0,<11.0.0
+
+# Data manipulation and analysis
+pandas>=1.3.0,<3.0.0
+
+# Visualization
+matplotlib>=3.5.0,<4.0.0
+plotly>=5.0.0,<6.0.0
+seaborn>=0.11.0,<1.0.0
+
+# Progress bars and utilities
+tqdm>=4.62.0,<5.0.0
+
+# Configuration management
+PyYAML>=6.0,<7.0
+
+# Performance optimization
+numba>=0.56.0,<1.0.0
+
+# Optional: GPU acceleration (comment out if not needed)
+# cupy-cuda11x>=10.0.0  # For CUDA 11.x systems
+# cupy-cuda12x>=12.0.0  # For CUDA 12.x systems
+
+# Optional: Advanced visualization (comment out if not needed)
+# bokeh>=2.4.0,<3.0.0
+# ipywidgets>=7.6.0,<9.0.0
+
+# Development and testing dependencies (install with pip install -e .[dev])
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+# pytest-xdist>=3.0.0
+# black>=22.0.0
+# flake8>=5.0.0
+# mypy>=0.991
+# pre-commit>=2.20.0
+
+# Documentation dependencies (install with pip install -e .[docs])
+# sphinx>=5.0.0
+# sphinx-rtd-theme>=1.0.0
+# nbsphinx>=0.8.0
+
+# Jupyter notebook dependencies (install with pip install -e .[notebooks])
+# jupyter>=1.0.0
+# ipykernel>=6.0.0
+# jupyterlab>=3.0.0

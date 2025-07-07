@@ -1,0 +1,74 @@
+# Default Configuration for Template Matching Experimental Platform
+# This configuration replicates the exact parameters that achieve 5.63±0.17 px error
+# on the 159 test images from coordenadas_prueba_1.csv
+
+# Core Algorithm Parameters
+eigenpatches:
+  patch_size: 21                    # Size of square patches extracted around landmarks
+  n_components: 20                  # Number of PCA components for dimensionality reduction
+  pyramid_levels: 3                 # Number of levels in image pyramid for multi-scale search
+  scale_factor: 0.5                # Scale factor between pyramid levels
+  
+# Landmark Prediction Parameters
+landmark_predictor:
+  lambda_shape: 0.1                # Shape model constraint weight (geometric restrictions)
+  max_iterations: 5                # Maximum iterations for iterative refinement
+  convergence_threshold: 0.5       # Convergence threshold in pixels
+  search_radius: [20, 10, 5]       # Search radius per pyramid level
+  step_size: [2, 1]                # Step size for local search per pyramid level
+  
+# Image Processing Parameters
+image_processing:
+  image_size: 299                  # Target image size (299x299 pixels)
+  coordinate_scale_factor: 4.67    # Scale factor from 64x64 to 299x299 coordinates
+  normalize_intensity: true        # Whether to normalize image intensities
+  
+# Dataset Configuration
+datasets:
+  training_coords: "coordenadas/coordenadas_entrenamiento_1.csv"
+  test_coords: "coordenadas/coordenadas_prueba_1.csv"
+  image_base_path: "COVID-19_Radiography_Dataset"
+  
+# File Paths
+paths:
+  project_root: "/home/donrobot/Projects/Tesiscopia"
+  models_dir: "matching_experimental/models"
+  results_dir: "matching_experimental/results"
+  visualizations_dir: "matching_experimental/visualizations"
+  logs_dir: "matching_experimental/logs"
+  
+# Model Configuration
+model:
+  save_format: "pkl"               # Format for saving trained models
+  include_metadata: true           # Whether to include training metadata
+  version: "1.0.0"                # Model version for tracking
+  
+# Evaluation Configuration
+evaluation:
+  confidence_threshold: 0.7        # Minimum confidence for valid predictions
+  statistical_tests: true          # Whether to perform statistical significance tests
+  generate_visualizations: true    # Whether to generate evaluation plots
+  save_detailed_results: true      # Whether to save per-image detailed results
+  
+# Logging Configuration
+logging:
+  level: "INFO"                    # Logging level (DEBUG, INFO, WARNING, ERROR)
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_logging: true               # Whether to log to file
+  console_logging: true            # Whether to log to console
+  
+# Reproducibility
+random_seed: 42                    # Random seed for reproducible results
+numpy_seed: 42                     # NumPy random seed
+  
+# Performance Configuration
+performance:
+  n_jobs: -1                       # Number of parallel jobs (-1 for all cores)
+  batch_size: 32                   # Batch size for processing multiple images
+  memory_limit: "8GB"              # Memory limit for large operations
+  
+# Experimental Features
+experimental:
+  enable_confidence_maps: false    # Whether to generate confidence maps
+  enable_uncertainty_quantification: false  # Whether to quantify prediction uncertainty
+  enable_ensemble_methods: false   # Whether to use ensemble prediction methods

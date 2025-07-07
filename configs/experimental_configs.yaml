@@ -1,0 +1,209 @@
+# Experimental Configurations for Template Matching Research
+# This file contains various parameter configurations for systematic experimentation
+
+# Patch Size Sensitivity Experiments
+patch_size_experiments:
+  small_patches:
+    name: "Small Patches (11x11)"
+    description: "Test with smaller patches for faster processing"
+    hypothesis: "Smaller patches may reduce computational cost but might lose important contextual information"
+    eigenpatches:
+      patch_size: 11
+      n_components: 15
+    expected_trade_off: "Speed vs Accuracy"
+    
+  medium_patches:
+    name: "Medium Patches (15x15)"
+    description: "Medium-sized patches as compromise between speed and accuracy"
+    hypothesis: "Medium patches provide good balance between contextual information and computational efficiency"
+    eigenpatches:
+      patch_size: 15
+      n_components: 18
+    expected_trade_off: "Balanced approach"
+    
+  large_patches:
+    name: "Large Patches (31x31)"
+    description: "Larger patches for more contextual information"
+    hypothesis: "Larger patches capture more anatomical context but increase computational cost"
+    eigenpatches:
+      patch_size: 31
+      n_components: 25
+    expected_trade_off: "Accuracy vs Speed"
+    
+# PCA Components Experiments
+pca_components_experiments:
+  low_components:
+    name: "Low Dimensionality (10 components)"
+    description: "Reduced PCA components for faster processing"
+    hypothesis: "Fewer components may lose important eigenpatches variations"
+    eigenpatches:
+      n_components: 10
+    expected_impact: "Faster training/prediction, possible accuracy loss"
+    
+  medium_components:
+    name: "Medium Dimensionality (15 components)"
+    description: "Moderate number of components"
+    hypothesis: "Balance between representation quality and computational efficiency"
+    eigenpatches:
+      n_components: 15
+    expected_impact: "Good balance"
+    
+  high_components:
+    name: "High Dimensionality (25 components)"
+    description: "More PCA components for richer representation"
+    hypothesis: "More components capture finer eigenpatches variations"
+    eigenpatches:
+      n_components: 25
+    expected_impact: "Better representation, slower processing"
+    
+  very_high_components:
+    name: "Very High Dimensionality (30 components)"
+    description: "Maximum components for complete representation"
+    hypothesis: "Might lead to overfitting with diminishing returns"
+    eigenpatches:
+      n_components: 30
+    expected_impact: "Potential overfitting, much slower processing"
+    
+# Multi-Scale Pyramid Experiments
+pyramid_experiments:
+  two_level:
+    name: "Two-Level Pyramid"
+    description: "Faster processing with fewer pyramid levels"
+    hypothesis: "Fewer levels may miss fine-scale details but process faster"
+    eigenpatches:
+      pyramid_levels: 2
+    landmark_predictor:
+      search_radius: [20, 10]
+      step_size: [2]
+    expected_impact: "Faster processing, possible accuracy loss"
+    
+  four_level:
+    name: "Four-Level Pyramid"
+    description: "More detailed multi-scale search"
+    hypothesis: "More levels provide finer scale progression"
+    eigenpatches:
+      pyramid_levels: 4
+    landmark_predictor:
+      search_radius: [20, 15, 10, 5]
+      step_size: [2, 1, 1]
+    expected_impact: "Better multi-scale representation, slower processing"
+    
+# Shape Model Constraint Experiments
+shape_constraint_experiments:
+  loose_constraints:
+    name: "Loose Shape Constraints"
+    description: "Relaxed geometric constraints for more flexibility"
+    hypothesis: "Looser constraints may help with atypical anatomy"
+    landmark_predictor:
+      lambda_shape: 0.05
+    expected_impact: "More flexible fitting, possible anatomical implausibility"
+    
+  tight_constraints:
+    name: "Tight Shape Constraints"
+    description: "Strict geometric constraints for anatomical plausibility"
+    hypothesis: "Tighter constraints ensure anatomical correctness"
+    landmark_predictor:
+      lambda_shape: 0.2
+    expected_impact: "Anatomically plausible, possible underfitting"
+    
+# Convergence Experiments
+convergence_experiments:
+  fast_convergence:
+    name: "Fast Convergence"
+    description: "Fewer iterations for faster processing"
+    hypothesis: "Fewer iterations may not reach optimal solution"
+    landmark_predictor:
+      max_iterations: 3
+      convergence_threshold: 1.0
+    expected_impact: "Faster processing, possible suboptimal results"
+    
+  slow_convergence:
+    name: "Slow Convergence"
+    description: "More iterations for better convergence"
+    hypothesis: "More iterations achieve better local optima"
+    landmark_predictor:
+      max_iterations: 10
+      convergence_threshold: 0.1
+    expected_impact: "Better convergence, much slower processing"
+    
+# Hybrid Experiments
+hybrid_experiments:
+  speed_optimized:
+    name: "Speed Optimized Configuration"
+    description: "Optimized for fastest processing while maintaining reasonable accuracy"
+    hypothesis: "Careful parameter tuning can achieve good speed-accuracy trade-off"
+    eigenpatches:
+      patch_size: 15
+      n_components: 15
+      pyramid_levels: 2
+    landmark_predictor:
+      lambda_shape: 0.1
+      max_iterations: 3
+    expected_baseline_comparison: "~80% accuracy, ~300% speed improvement"
+    
+  accuracy_optimized:
+    name: "Accuracy Optimized Configuration"
+    description: "Optimized for best possible accuracy regardless of computational cost"
+    hypothesis: "Conservative parameters with maximum computational resources"
+    eigenpatches:
+      patch_size: 31
+      n_components: 30
+      pyramid_levels: 4
+    landmark_predictor:
+      lambda_shape: 0.05
+      max_iterations: 10
+      convergence_threshold: 0.1
+    expected_baseline_comparison: "~110% accuracy, ~500% computational cost"
+    
+  balanced_optimized:
+    name: "Balanced Optimized Configuration"
+    description: "Optimized for best balance between speed and accuracy"
+    hypothesis: "Moderate parameters provide optimal trade-off"
+    eigenpatches:
+      patch_size: 21
+      n_components: 22
+      pyramid_levels: 3
+    landmark_predictor:
+      lambda_shape: 0.08
+      max_iterations: 6
+    expected_baseline_comparison: "~105% accuracy, ~110% computational cost"
+    
+# Pathology-Specific Experiments
+pathology_experiments:
+  covid_optimized:
+    name: "COVID-19 Optimized"
+    description: "Parameters tuned specifically for COVID-19 lung patterns"
+    hypothesis: "COVID-19 specific patterns may require different parameters"
+    eigenpatches:
+      patch_size: 25
+      n_components: 25
+    landmark_predictor:
+      lambda_shape: 0.12
+    target_pathology: "COVID-19"
+    
+  normal_optimized:
+    name: "Normal Lung Optimized"
+    description: "Parameters tuned for healthy lung patterns"
+    hypothesis: "Normal lungs have more consistent patterns"
+    eigenpatches:
+      patch_size: 19
+      n_components: 18
+    landmark_predictor:
+      lambda_shape: 0.08
+    target_pathology: "Normal"
+    
+# Experimental Methodology
+experimental_methodology:
+  validation_strategy: "k-fold cross-validation"
+  statistical_significance: "Wilcoxon signed-rank test"
+  multiple_comparisons: "Bonferroni correction"
+  confidence_level: 0.95
+  effect_size_threshold: 0.2
+  
+# Experiment Execution Configuration
+execution:
+  parallel_experiments: true
+  max_concurrent_experiments: 3
+  save_intermediate_results: true
+  generate_comparison_reports: true
+  automatic_baseline_comparison: true
