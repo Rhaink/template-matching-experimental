@@ -1,0 +1,47 @@
+TEMPLATE MATCHING EXPERIMENTAL PLATFORM - VISUALIZATION REPORT
+======================================================================
+Generated: 2025-07-06 20:55:36
+Total Images: 159
+
+OVERALL PERFORMANCE:
+  Mean Error: 5.633 ± 1.146 pixels
+  Median Error: 5.444 pixels
+  Range: 3.309 - 9.481 pixels
+  Baseline Target: 5.63 ± 0.17 pixels
+  Accuracy: EXCELLENT
+
+PERFORMANCE BY PATHOLOGY:
+  Viral Pneumonia:
+    Count: 48 images
+    Mean: 5.569 ± 1.130 pixels
+    Median: 5.405 pixels
+
+  Normal:
+    Count: 72 images
+    Mean: 5.595 ± 1.138 pixels
+    Median: 5.381 pixels
+
+  COVID:
+    Count: 39 images
+    Mean: 5.784 ± 1.169 pixels
+    Median: 5.731 pixels
+
+BEST PERFORMING IMAGES:
+  1. Normal-9298: 3.309 pixels
+  2. Normal-2258: 3.359 pixels
+  3. Normal-4448: 3.599 pixels
+  4. COVID-720: 3.658 pixels
+  5. Viral Pneumonia-1321: 3.710 pixels
+
+WORST PERFORMING IMAGES:
+  1. Normal-9875: 8.069 pixels
+  2. Viral Pneumonia-679: 8.106 pixels
+  3. COVID-1137: 8.207 pixels
+  4. Viral Pneumonia-943: 8.941 pixels
+  5. COVID-1560: 9.481 pixels
+
+VISUALIZATION FILES GENERATED:
+  Landmark Predictions: 164 files
+  Lung Contours: 164 files
+  Side-by-side Comparisons: 0 files
+  Performance Analysis: 1 files

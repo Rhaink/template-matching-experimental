@@ -1,0 +1,176 @@
+VISUALIZACIONES CON FORMATO ORIGINAL TEMPLATE MATCHING
+============================================================
+Generadas en repositorio experimental con formato visual exacto:
+• Ground Truth: círculos verde lima con bordes verde oscuro
+• Predicciones: marcadores X rojos con líneas gruesas
+• Líneas de error: líneas amarillas conectando GT y predicciones
+• Números de landmarks: texto blanco con fondo negro
+============================================================
+
+Total de imágenes: 159
+Error promedio: 5.63 ± 1.15 px
+Error mediano: 5.44 px
+Error mínimo: 3.31 px
+Error máximo: 9.48 px
+
+DETALLE POR IMAGEN:
+------------------------------------------------------------
+  1. Normal-9298                    |   3.31 px
+  2. Normal-2258                    |   3.36 px
+  3. Normal-4448                    |   3.60 px
+  4. COVID-720                      |   3.66 px
+  5. Viral Pneumonia-1321           |   3.71 px
+  6. Viral Pneumonia-263            |   3.80 px
+  7. COVID-3099                     |   3.84 px
+  8. Normal-7178                    |   3.96 px
+  9. Normal-789                     |   3.96 px
+ 10. Normal-4178                    |   4.06 px
+ 11. Normal-1756                    |   4.07 px
+ 12. Viral Pneumonia-634            |   4.09 px
+ 13. COVID-334                      |   4.12 px
+ 14. Viral Pneumonia-761            |   4.17 px
+ 15. Normal-3583                    |   4.26 px
+ 16. Normal-9898                    |   4.27 px
+ 17. Viral Pneumonia-1100           |   4.28 px
+ 18. COVID-421                      |   4.29 px
+ 19. Viral Pneumonia-335            |   4.32 px
+ 20. Normal-1891                    |   4.35 px
+ 21. Normal-3716                    |   4.35 px
+ 22. Normal-10078                   |   4.37 px
+ 23. Viral Pneumonia-444            |   4.42 px
+ 24. Viral Pneumonia-401            |   4.48 px
+ 25. COVID-3263                     |   4.48 px
+ 26. Viral Pneumonia-856            |   4.50 px
+ 27. Viral Pneumonia-501            |   4.51 px
+ 28. Viral Pneumonia-101            |   4.59 px
+ 29. Normal-10111                   |   4.62 px
+ 30. Normal-7635                    |   4.66 px
+ 31. Viral Pneumonia-901            |   4.66 px
+ 32. COVID-18                       |   4.66 px
+ 33. Normal-5329                    |   4.73 px
+ 34. Normal-8732                    |   4.75 px
+ 35. COVID-2542                     |   4.76 px
+ 36. Viral Pneumonia-1199           |   4.78 px
+ 37. Normal-9797                    |   4.79 px
+ 38. Normal-9174                    |   4.81 px
+ 39. Viral Pneumonia-93             |   4.81 px
+ 40. Viral Pneumonia-80             |   4.85 px
+ 41. COVID-1970                     |   4.87 px
+ 42. Normal-9309                    |   4.87 px
+ 43. Normal-5079                    |   4.90 px
+ 44. Normal-647                     |   4.91 px
+ 45. Normal-9248                    |   4.92 px
+ 46. Viral Pneumonia-675            |   4.92 px
+ 47. Normal-4185                    |   4.94 px
+ 48. Viral Pneumonia-217            |   4.95 px
+ 49. Normal-7608                    |   4.95 px
+ 50. COVID-3492                     |   5.00 px
+ 51. Normal-2881                    |   5.01 px
+ 52. Normal-5289                    |   5.02 px
+ 53. Viral Pneumonia-1255           |   5.05 px
+ 54. Viral Pneumonia-797            |   5.05 px
+ 55. COVID-94                       |   5.11 px
+ 56. Normal-9419                    |   5.15 px
+ 57. COVID-2358                     |   5.16 px
+ 58. Normal-3691                    |   5.16 px
+ 59. COVID-881                      |   5.17 px
+ 60. Normal-1582                    |   5.17 px
+ 61. COVID-3380                     |   5.17 px
+ 62. Normal-7573                    |   5.18 px
+ 63. Normal-4120                    |   5.20 px
+ 64. Normal-2299                    |   5.21 px
+ 65. Viral Pneumonia-528            |   5.21 px
+ 66. Viral Pneumonia-220            |   5.28 px
+ 67. Normal-30                      |   5.29 px
+ 68. COVID-2638                     |   5.30 px
+ 69. Viral Pneumonia-135            |   5.31 px
+ 70. COVID-2169                     |   5.31 px
+ 71. Viral Pneumonia-889            |   5.32 px
+ 72. Normal-1588                    |   5.33 px
+ 73. Normal-1943                    |   5.37 px
+ 74. Normal-4470                    |   5.38 px
+ 75. COVID-1907                     |   5.38 px
+ 76. Normal-1979                    |   5.38 px
+ 77. Viral Pneumonia-232            |   5.39 px
+ 78. Viral Pneumonia-623            |   5.42 px
+ 79. Viral Pneumonia-1043           |   5.43 px
+ 80. Normal-395                     |   5.44 px
+ 81. Viral Pneumonia-95             |   5.48 px
+ 82. Normal-4498                    |   5.48 px
+ 83. Normal-4484                    |   5.49 px
+ 84. Viral Pneumonia-1220           |   5.49 px
+ 85. Normal-1088                    |   5.50 px
+ 86. Normal-8879                    |   5.57 px
+ 87. COVID-3154                     |   5.57 px
+ 88. Normal-599                     |   5.60 px
+ 89. COVID-2072                     |   5.60 px
+ 90. Viral Pneumonia-64             |   5.66 px
+ 91. COVID-2829                     |   5.66 px
+ 92. Normal-2007                    |   5.67 px
+ 93. Normal-2281                    |   5.70 px
+ 94. COVID-526                      |   5.73 px
+ 95. Viral Pneumonia-1260           |   5.86 px
+ 96. Viral Pneumonia-844            |   5.87 px
+ 97. Viral Pneumonia-993            |   5.87 px
+ 98. COVID-902                      |   5.88 px
+ 99. Viral Pneumonia-707            |   5.92 px
+100. COVID-3321                     |   5.92 px
+101. Normal-3805                    |   5.93 px
+102. COVID-2174                     |   5.95 px
+103. Normal-3173                    |   5.95 px
+104. Viral Pneumonia-424            |   5.98 px
+105. COVID-2948                     |   5.99 px
+106. COVID-2025                     |   6.02 px
+107. COVID-642                      |   6.06 px
+108. COVID-2657                     |   6.07 px
+109. COVID-3090                     |   6.08 px
+110. Normal-9836                    |   6.10 px
+111. Normal-9934                    |   6.13 px
+112. COVID-605                      |   6.15 px
+113. Normal-922                     |   6.19 px
+114. COVID-3593                     |   6.21 px
+115. Viral Pneumonia-745            |   6.23 px
+116. Viral Pneumonia-456            |   6.31 px
+117. Viral Pneumonia-989            |   6.33 px
+118. Viral Pneumonia-1057           |   6.33 px
+119. COVID-2536                     |   6.34 px
+120. Viral Pneumonia-207            |   6.35 px
+121. Normal-8317                    |   6.37 px
+122. Normal-3776                    |   6.38 px
+123. COVID-2606                     |   6.41 px
+124. Normal-3580                    |   6.41 px
+125. Normal-10105                   |   6.47 px
+126. COVID-3087                     |   6.55 px
+127. Normal-3720                    |   6.56 px
+128. COVID-709                      |   6.59 px
+129. Normal-4297                    |   6.63 px
+130. Normal-9200                    |   6.65 px
+131. Normal-6560                    |   6.70 px
+132. Viral Pneumonia-1161           |   6.74 px
+133. Normal-7192                    |   6.76 px
+134. Normal-6322                    |   6.76 px
+135. Viral Pneumonia-1327           |   6.81 px
+136. Viral Pneumonia-1144           |   6.84 px
+137. Viral Pneumonia-1092           |   6.88 px
+138. Normal-2865                    |   6.89 px
+139. Viral Pneumonia-1204           |   6.95 px
+140. Normal-52                      |   7.01 px
+141. Normal-4284                    |   7.02 px
+142. Viral Pneumonia-100            |   7.09 px
+143. Normal-7332                    |   7.10 px
+144. Normal-551                     |   7.12 px
+145. Normal-5829                    |   7.32 px
+146. Normal-2876                    |   7.42 px
+147. COVID-799                      |   7.42 px
+148. Normal-2575                    |   7.55 px
+149. COVID-1387                     |   7.59 px
+150. Normal-3351                    |   7.69 px
+151. Normal-9112                    |   7.74 px
+152. COVID-1733                     |   7.80 px
+153. Normal-4507                    |   7.83 px
+154. Viral Pneumonia-73             |   7.96 px
+155. Normal-9875                    |   8.07 px
+156. Viral Pneumonia-679            |   8.11 px
+157. COVID-1137                     |   8.21 px
+158. Viral Pneumonia-943            |   8.94 px
+159. COVID-1560                     |   9.48 px

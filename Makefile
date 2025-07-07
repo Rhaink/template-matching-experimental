@@ -1,7 +1,7 @@
 # Makefile for Matching Experimental Platform
 # Provides automation for common development and research tasks
 
-.PHONY: help install test clean lint format docs pipeline check validate
+.PHONY: help install test clean lint format docs pipeline check validate visualize visualize-all visualize-quick visualize-landmarks visualize-contours
 
 # Default target
 help:
@@ -20,6 +20,10 @@ help:
 	@echo "  pipeline    - Run complete experimental pipeline"
 	@echo "  validate    - Validate installation and configuration"
 	@echo "  check       - Run all checks (lint, test, validate)"
+	@echo "  visualize   - Generate all 159 visualizations (comprehensive)"
+	@echo "  visualize-quick - Quick generation of all visualizations"
+	@echo "  visualize-landmarks - Generate only landmark visualizations"
+	@echo "  visualize-contours  - Generate only contour visualizations"
 	@echo ""
 	@echo "Research workflow:"
 	@echo "  make install-dev  # One-time setup"
@@ -233,3 +237,66 @@ help-dev:
 	@echo "  lint       - Check code quality"
 	@echo "  test       - Run test suite"
 	@echo "  validate   - Verify installation"
+
+# Visualization targets
+visualize: visualize-all
+	@echo "Complete visualization generation finished!"
+
+visualize-all:
+	@echo "Generating all 159 visualizations (comprehensive mode)..."
+	python scripts/generate_all_visualizations.py \
+		--config configs/default_config.yaml \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations \
+		--types landmarks contours comparison analysis
+
+visualize-quick:
+	@echo "Quick generation of all 159 visualizations..."
+	python scripts/quick_visualizations.py \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations \
+		--config configs/default_config.yaml
+
+visualize-landmarks:
+	@echo "Generating landmark visualizations only..."
+	python scripts/quick_visualizations.py \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations \
+		--landmarks-only
+
+visualize-contours:
+	@echo "Generating contour visualizations only..."
+	python scripts/quick_visualizations.py \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations \
+		--contours-only
+
+visualize-resume:
+	@echo "Resuming visualization generation (skip existing)..."
+	python scripts/generate_all_visualizations.py \
+		--config configs/default_config.yaml \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations \
+		--resume
+
+visualize-test:
+	@echo "Testing visualization generation with first 10 images..."
+	python scripts/quick_visualizations.py \
+		--results data/results_coordenadas_prueba_1.pkl \
+		--output visualizations_test \
+		--config configs/default_config.yaml
+
+help-visualize:
+	@echo "Visualization targets:"
+	@echo "  visualize          - Generate all visualizations (comprehensive)"
+	@echo "  visualize-quick    - Quick generation (optimized for speed)"
+	@echo "  visualize-landmarks- Generate only landmark visualizations"
+	@echo "  visualize-contours - Generate only contour visualizations"
+	@echo "  visualize-resume   - Resume generation (skip existing files)"
+	@echo "  visualize-test     - Test generation with sample images"
+	@echo ""
+	@echo "Expected output:"
+	@echo "  159 landmark prediction images"
+	@echo "  159 lung contour images"
+	@echo "  159 side-by-side comparison images"
+	@echo "  Performance analysis plots and reports"

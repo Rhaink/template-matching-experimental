@@ -123,6 +123,80 @@ The system replicates and validates the following documented performance:
 | **By Pathology** | Normal: 5.501±0.262 px<br>Viral: 5.708±0.389 px<br>COVID: 5.764±0.388 px | Category breakdown |
 | **Processing Speed** | ~0.2 seconds/image | Typical performance |
 
+## 🎨 Visualization Generation
+
+The platform provides comprehensive visualization capabilities for all 159 test images:
+
+### Quick Visualization Generation
+
+```bash
+# Generate all visualizations (landmarks + contours) for 159 images
+make visualize-quick
+
+# Or manually:
+python scripts/quick_visualizations.py \
+    --results data/results_coordenadas_prueba_1.pkl \
+    --output visualizations \
+    --config configs/default_config.yaml
+```
+
+### Advanced Visualization Options
+
+```bash
+# Comprehensive generation with analysis
+make visualize
+
+# Generate only landmark predictions
+make visualize-landmarks
+
+# Generate only lung contours  
+make visualize-contours
+
+# Resume interrupted generation (skip existing files)
+make visualize-resume
+```
+
+### Generated Outputs
+
+**All commands generate visualizations for 159 test images:**
+
+- **Landmark Predictions** (`visualizations/landmark_predictions/`): 159 PNG files
+  - Shows predicted landmarks with anatomical connections
+  - Color-coded by pathology (Normal=Green, COVID=Red, Viral=Blue)
+  - Includes landmark numbers and error information
+  
+- **Lung Contours** (`visualizations/lung_contours/`): 159 PNG files  
+  - Shows lung boundary contours without individual points
+  - Anatomically correct connections between landmarks
+  - Clean visualization focusing on lung shape
+
+- **Performance Analysis** (`visualizations/performance_analysis/`):
+  - `performance_summary.png`: Error distribution, pathology comparison
+  - `statistics_report.txt`: Detailed performance breakdown
+
+### Visualization Performance
+
+- **Generation Speed**: ~2.7 images/second (57 seconds total)
+- **File Size**: ~240KB per visualization
+- **Total Output**: ~78MB for complete 159-image set
+- **Resume Capability**: Skip existing files for interrupted runs
+
+### Example Output
+
+```
+visualizations/
+├── landmark_predictions/
+│   ├── 000_Normal_3173_landmarks.png      # Green landmarks (Normal case)
+│   ├── 001_Viral_Pneumonia_761_landmarks.png # Blue landmarks (Viral case)
+│   └── ... (157 more files)
+├── lung_contours/
+│   ├── 000_Normal_3173_contour.png        # Lung boundary only
+│   └── ... (158 more files)
+└── performance_analysis/
+    ├── performance_summary.png            # Statistical analysis plots
+    └── statistics_report.txt              # Detailed metrics report
+```
+
 ## 🔬 Mathematical Foundations
 
 ### Algorithm Overview
